@@ -1,6 +1,6 @@
 # vim-lexical
 
-> Convenient access to spell-check & thesaurus/dictionary completion for Vim
+> Building on Vim’s spell-check and thesaurus/dictionary completion
 
 Though principally used as a editor for code, Vim flirts with those of us
 editing documentation and prose by providing spell-check as well as completion
