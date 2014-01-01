@@ -6,7 +6,7 @@ Though principally used as a editor for code, Vim flirts with those of us
 editing documentation and prose by providing spell-check as well as completion
 capabilities using both dictionary and thesaurus files.
 
-While we can configure these settings in our `.vimrc` configuration, we often
+While we can configure these settings in our `.vimrc` files, we often
 need more granular control, where defaults are leveraged and configuration is
 applied by file type. This plugin fills that gap.
 
