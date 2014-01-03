@@ -144,6 +144,6 @@ If you like this plugin, you might like these others from the same author:
 
 ## Future development
 
-If you have any ideas on improving this plugin, please post them to the github
-project issue page.
+If you’ve spotted a problem or have an idea on improving this plugin,
+please post it to the github project issue page.
 
