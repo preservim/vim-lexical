@@ -12,10 +12,9 @@ let autoloaded_lexical = 1
 function! lexical#init(...)
   let l:args = a:0 ? a:1 : {}
 
-  let l:spelllang = get(l:args, 'spelllang', '')
-  if len(l:spelllang) > 0
+  for l:spelllang in get(l:args, 'spelllang', [])
     execute 'setlocal spelllang+=' . l:spelllang
-  endif
+  endfor
 
   if get(l:args, 'spell', g:lexical#spell)
     setlocal spell
@@ -25,17 +24,19 @@ function! lexical#init(...)
     setlocal complete-=kspell
   endif
 
-  let l:thesaurus = get(l:args, 'thesaurus', g:lexical#thesaurus)
-  execute 'setlocal thesaurus+=' . l:thesaurus
-  if len(l:thesaurus) > 0
+  for l:thesaurus in get(l:args, 'thesaurus', g:lexical#thesaurus)
+    execute 'setlocal thesaurus+=' . l:thesaurus
+  endfor
+  if len(&thesaurus) > 0
     setlocal complete+=s
   else
     setlocal complete-=s
   endif
 
-  let l:dictionary = get(l:args, 'dictionary', g:lexical#dictionary)
-  execute 'setlocal dictionary+=' . l:dictionary
-  if len(l:dictionary) > 0
+  for l:dictionary in get(l:args, 'dictionary', g:lexical#dictionary)
+    execute 'setlocal dictionary+=' . l:dictionary
+  endfor
+  if len(&dictionary) > 0
     setlocal complete+=k
   else
     setlocal complete-=k

@@ -46,12 +46,12 @@ If you don’t have one already, download a thesaurus from Project Gutenberg
 will look for it at this path:
 
 ```vim
-let g:lexical#thesaurus = '~/.vim/thesaurus/mthesaur.txt'
+let g:lexical#thesaurus = ['~/.vim/thesaurus/mthesaur.txt']
 ```
 
-Note that you can have multiple thesauri, with their paths delimited by commas.
+Note that you can specify multiple thesauruses in the list.
 
-Specifying a `'thesaurus'` argument in `lexical#init()` will override this
+Specifying a `'thesaurus'` list argument in `lexical#init()` will override this
 default.
 
 ### Dictionary configuration
@@ -59,14 +59,13 @@ default.
 On Unix-based systems (including OS X) the dictionary will default to:
 
 ```vim
-let g:lexical#dictionary = '/usr/share/dict/words'
+let g:lexical#dictionary = ['/usr/share/dict/words']
 ```
 
-Note that you can have multiple dictionaries, with their paths delimited by
-commas.
+Note that you can specify multiple dictionaries in the list.
 
-Specifying a `'dictionary'` argument in `lexical#init()` will override this
-default.
+Specifying a `'dictionary'` list argument in `lexical#init()` will override
+this default.
 
 ## Commands
 
@@ -99,14 +98,14 @@ characters (including whitespace). Otherwise the word under the cursor is used.
 
 And for Insert mode:
 
-* `«CTRL-X»«CTRL-S»` - find suggestion, using `«CTRL-P»` and `«CTRL-N»` to
+* `«CTRL-X» «CTRL-S»` - find suggestion, using `«CTRL-P»` and `«CTRL-N»` to
   navigate.
 
 ### Thesaurus commands
 
 For thesaurus lookup, Vim has an Insert mode mapping of:
 
-* `«CTRL-X»«CTRL-T»` - for thesaurus completion, using `«CTRL-P»` and
+* `«CTRL-X» «CTRL-T»` - for thesaurus completion, using `«CTRL-P»` and
   `«CTRL-N»` to navigate.
 
 For convenient Normal mode thesaurus lookup from the cursor position, you can
@@ -116,13 +115,14 @@ define a key:
 let g:lexical#thesaurus_key = '<leader>t'
 ```
 
-No key is defined by default.
+No key is defined or mapped by default.
 
 ### Dictionary commands
 
 For dictionary lookup, Vim has an Insert mode mapping of:
 
-* `«CTRL-X»«CTRL-K»` - for dictionary completion
+* `«CTRL-X» «CTRL-K»` - for dictionary completion, using `«CTRL-P»` and
+  `«CTRL-N»` to navigate.
 
 For convenient Normal mode dictionary lookup from the cursor position, you can
 define a key:
@@ -131,7 +131,7 @@ define a key:
 let g:lexical#dictionary_key = '<leader>k'
 ```
 
-No key is defined by default.
+No key is defined or mapped by default.
 
 ## See also
 

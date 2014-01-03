@@ -19,18 +19,20 @@ endif
 
 if !exists('g:lexical#thesaurus')
   let thes_path = '~/.vim/thesaurus/mthesaur.txt'
-  let g:lexical#thesaurus =
+  let g:lexical#thesaurus = [
         \ filereadable(expand(thes_path))
         \ ? thes_path
         \ : ''
+        \ ]
 endif
 
 if !exists('g:lexical#dictionary')
   let dict_path = '/usr/share/dict/words'
-  let g:lexical#dictionary =
+  let g:lexical#dictionary = [
         \ has('unix') && filereadable(dict_path)
         \ ? dict_path
         \ : ''
+        \ ]
 endif
 
 if !exists('g:lexical#thesaurus_key')
