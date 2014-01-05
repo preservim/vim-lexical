@@ -9,7 +9,7 @@
 if exists("autoloaded_lexical") | finish | endif
 let autoloaded_lexical = 1
 
-function! lexical#init(...)
+function! lexical#init(...) abort
   let l:args = a:0 ? a:1 : {}
 
   for l:spelllang in get(l:args, 'spelllang', [])
