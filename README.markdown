@@ -157,14 +157,14 @@ This mapping is strictly opt-in. No key is defined or mapped by default.
 
 Sometimes you need a highly-customized environment for spell-check and
 completion. You can define your own commands in your `.vimrc` to meet that
-need:
+need. For example:
 
 ```vim
 command -nargs=0 LexMed call lexical#init({ 
                     \ 'spell': 1, 
                     \ 'spelllang':  ['en', 'medical'],
                     \ 'dictionary': ['~/.vim/dictionary/medical_terms.txt',
-                    \                '/usr/share/dictionary/words',
+                    \                '/usr/share/dict/words',
                     \               ],
                     \ 'thesaurus':  ['~/.vim/dictionary/medical_synonyms.txt',
                     \                '~/.vim/thesaurus/mthesaur.txt',
@@ -172,8 +172,8 @@ command -nargs=0 LexMed call lexical#init({
                     \ })
 ```
 
-Then to quickly set up this _lexical_ environment for the current buffer,
-all you need to do is enter the command:
+Then to quickly configure these settings for Vim for the current buffer,
+enter the command:
 
 ```vim
 :LexMed
