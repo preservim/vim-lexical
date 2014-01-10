@@ -14,29 +14,47 @@ let s:save_cpo = &cpo
 set cpo&vim
 
 if !exists('g:lexical#spell')
+  " enable by default (ignore global &spell)
   let g:lexical#spell = 1
 endif
 
 if !exists('g:lexical#spelllang')
+  " build on global-defined spelling language
   let g:lexical#spelllang = [&spelllang,]
 endif
 
 if !exists('g:lexical#thesaurus')
-  let thes_path = '~/.vim/thesaurus/mthesaur.txt'
-  let g:lexical#thesaurus = [
-        \ filereadable(expand(thes_path))
-        \ ? thes_path
-        \ : ''
-        \ ]
+  " build on globally-defined thesaurus, if any
+  let thes_list = split(&thesaurus, ',')
+  if len(thes_list) > 0
+    " use the globally-defined thesaurus
+    let g:lexical#thesaurus = thes_list
+  else
+    " attempt to discover a thesaurus
+    let thes_path = '~/.vim/thesaurus/mthesaur.txt'
+    let g:lexical#thesaurus = [
+          \ filereadable(expand(thes_path))
+          \ ? thes_path
+          \ : ''
+          \ ]
+  endif
 endif
 
 if !exists('g:lexical#dictionary')
-  let dict_path = '/usr/share/dict/words'
-  let g:lexical#dictionary = [
-        \ has('unix') && filereadable(dict_path)
-        \ ? dict_path
-        \ : ''
-        \ ]
+  " build on globally-defined dictionary, if any
+  let dict_list = split(&dictionary, ',')
+  if len(dict_list) > 0
+    " use the globally-defined dictionaries
+    let g:lexical#dictionary = dict_list
+  else
+    " attempt to discover a dictionary
+    let dict_path = '/usr/share/dict/words'
+    let g:lexical#dictionary = [
+          \ has('unix') && filereadable(dict_path)
+          \ ? dict_path
+          \ : ''
+          \ ]
+  endif
 endif
 
 if !exists('g:lexical#thesaurus_key')

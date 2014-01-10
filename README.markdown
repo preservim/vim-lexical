@@ -2,13 +2,22 @@
 
 > Building on Vim’s spell-check and thesaurus/dictionary completion
 
+Features of this plugin:
+
+* Specify the languages to be used in spell-check
+* Specify a list of thesauruses for synonym completion
+* Specify a list of dictionaries for word completion
+* Opt-in key mappings for _Normal_ mode thesaurus and dictionary
+  completion
+* Buffer-scoped configuration (leaves your global settings alone)
+
 Though principally used as a editor for code, Vim flirts with those of us
 editing documentation and prose by providing spell-check as well as
 completion capabilities using both dictionary and thesaurus files.
 
 While we can configure these settings in our `.vimrc` files, we often need
 more granular control, where defaults are leveraged and configuration is
-applied by file type. This plugin fills that gap.
+applied by file type to the current buffer. This plugin fills that gap.
 
 ## Installation
 
@@ -33,7 +42,8 @@ In the last `autocmd` statement above, dictionaries and thesauruses are
 configured for the `text` file type, but spell-check is disabled by
 default.
 
-You can change the default setting for spell-check in your `.vimrc`:
+_lexical_ enables spell-check by default for buffers in which it is
+initialized. You can change that default setting in your `.vimrc`:
 
 ```vim
 let g:lexical#spell = 1         " 0=disabled, 1=enabled
@@ -41,7 +51,7 @@ let g:lexical#spell = 1         " 0=disabled, 1=enabled
 
 ### Spell-check language configuration
 
-Vim’s global `spelllang` (note three ‘l’s) may already specify a default
+Vim’s global `spelllang` (note three `l`s) may already specify a default
 language. You can query it with a simple command:
 
 ```vim
@@ -56,8 +66,6 @@ your `.vimrc`:
 let g:lexical#spelllang = ['en_us','en_ca',]
 ```
 
-* This will apply only to buffers initialized with `lexical#init()`.
-
 ### Thesaurus configuration
 
 If you don’t have one already, download a thesaurus, such as [Moby
@@ -69,8 +77,6 @@ let g:lexical#thesaurus = ['~/.vim/thesaurus/mthesaur.txt',]
 ```
 
 * You can specify multiple paths to thesauruses in the list.
-* An explicit setting will override your globally-defined `thesaurus`
-  setting, but only for the buffers initialized with `lexical#init()`.
 
 [1]: http://www.gutenberg.org/ebooks/3202 "Moby Thesaurus List by Grady Ward"
 
@@ -83,8 +89,6 @@ let g:lexical#dictionary = ['/usr/share/dict/words',]
 ```
 
 * You can specify multiple paths to dictionaries in the list.
-* An explicit setting will override your globally-defined `dictionary`
-  setting, but only for the buffers initialized with `lexical#init()`.
 
 ## Commands
 
@@ -132,7 +136,7 @@ you can define a key in your `.vimrc`:
 let g:lexical#thesaurus_key = '<leader>t'
 ```
 
-No key is defined or mapped by default.
+This mapping is strictly opt-in. No key is defined or mapped by default.
 
 ### Dictionary commands
 
@@ -147,7 +151,36 @@ you can define a key in your `.vimrc`:
 let g:lexical#dictionary_key = '<leader>k'
 ```
 
-No key is defined or mapped by default.
+This mapping is strictly opt-in. No key is defined or mapped by default.
+
+### Define your own commands
+
+Sometimes you need a highly-customized environment for spell-check and
+completion. You can define your own commands in your `.vimrc` to meet that
+need:
+
+```vim
+command -nargs=0 LexMed call lexical#init({ 
+                    \ 'spell': 1, 
+                    \ 'spelllang':  ['en', 'medical'],
+                    \ 'dictionary': ['~/.vim/dictionary/medical_terms.txt',
+                    \                '/usr/share/dictionary/words',
+                    \               ],
+                    \ 'thesaurus':  ['~/.vim/dictionary/medical_synonyms.txt',
+                    \                '~/.vim/thesaurus/mthesaur.txt',
+                    \               ],
+                    \ })
+```
+
+Then to quickly set up this _lexical_ environment for the current buffer,
+all you need to do is enter the command:
+
+```vim
+:LexMed
+```
+
+Where you are providing an explicit value, it will use that. Where you do
+not, it will fall back to your specified defaults or global settings.
 
 ## See also
 
