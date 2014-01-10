@@ -119,7 +119,7 @@ For thesaurus lookup while in _Insert_ mode:
 * `«CTRL-X» «CTRL-T»` - thesaurus lookup, using `«CTRL-P»` and `«CTRL-N»` to navigate.
 
 For convenient _Normal_ mode thesaurus lookup from the cursor position,
-you can define a key:
+you can define a key in your `.vimrc`:
 
 ```vim
 let g:lexical#thesaurus_key = '<leader>t'
@@ -134,7 +134,7 @@ For dictionary completion while in _Insert_ mode:
 * `«CTRL-X» «CTRL-K»` - dictionary completion, using `«CTRL-P»` and `«CTRL-N»` to navigate.
 
 For convenient _Normal_ mode dictionary lookup from the cursor position,
-you can define a key:
+you can define a key in your `.vimrc`:
 
 ```vim
 let g:lexical#dictionary_key = '<leader>k'
