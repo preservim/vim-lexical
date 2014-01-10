@@ -172,8 +172,7 @@ command -nargs=0 LexMed call lexical#init({
                     \ })
 ```
 
-Then to quickly configure these settings for Vim for the current buffer,
-enter the command:
+Then to quickly configure Vim for the current buffer, enter the command:
 
 ```vim
 :LexMed
