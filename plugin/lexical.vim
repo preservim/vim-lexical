@@ -17,6 +17,10 @@ if !exists('g:lexical#spell')
   let g:lexical#spell = 1
 endif
 
+if !exists('g:lexical#spelllang')
+  let g:lexical#spelllang = [&spelllang,]
+endif
+
 if !exists('g:lexical#thesaurus')
   let thes_path = '~/.vim/thesaurus/mthesaur.txt'
   let g:lexical#thesaurus = [
