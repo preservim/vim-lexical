@@ -17,8 +17,8 @@ package manager.
 
 ## Configuration
 
-Because spell-check, thesaurus, etc. isn’t needed for all file types, it can be
-configured per file type through your `.vimrc`:
+Because spell-check, thesaurus, etc. isn’t needed for all file types, you can 
+configure it per file type in your `.vimrc`:
 
 ```vim
 augroup lexical
@@ -33,38 +33,46 @@ In the last `autocmd` statement above, dictionaries and thesauruses are
 configured for the `text` file type, but spell-check is disabled by
 default.
 
-### Spell-check configuration
-
 You can change the default setting for spell-check in your `.vimrc`:
 
 ```vim
 let g:lexical#spell = 1         " 0=disabled, 1=enabled
 ```
 
-This only affects buffers initialized with `lexical#init()`.
+### Spell-check language configuration
+
+Vim’s global `spelllang` (note three ‘l’s) may already specify a default
+language. You can query it with a simple command:
+
+```vim
+:echo &spelllang
+=> ‘en’
+```
+
+If desired, you can be more specific, overriding the global `spelllang` in
+your `.vimrc`:
+
+```vim
+let g:lexical#spelllang = ['en_us','en_ca',]
+```
+
+* This will apply only to buffers initialized with `lexical#init()`.
 
 ### Thesaurus configuration
 
-If you don’t have one already, download a thesaurus from Project
-Gutenberg:
-[mthes10.zip](http://www.gutenberg.org/dirs/etext02/mthes10.zip). By
-default _lexical_ will look for it at the following path:
+If you don’t have one already, download a thesaurus, such as [Moby
+Thesaurus][1] from Project Gutenberg and extract the `mthesaur.txt` file.
+By default _lexical_ will look for it at the following path:
 
 ```vim
 let g:lexical#thesaurus = ['~/.vim/thesaurus/mthesaur.txt',]
 ```
 
-Note that you can specify multiple thesauruses in the list.
+* You can specify multiple paths to thesauruses in the list.
+* An explicit setting will override your globally-defined `thesaurus`
+  setting, but only for the buffers initialized with `lexical#init()`.
 
-You can override the default during initialization:
-
-```vim
-augroup lexical
-  autocmd!
-  autocmd FileType textile call lexical#init({'thesaurus': ['~/thes/thes.de.txt',]})
-  ...
-augroup END
-```
+[1]: http://www.gutenberg.org/ebooks/3202 "Moby Thesaurus List by Grady Ward"
 
 ### Dictionary configuration
 
@@ -74,14 +82,13 @@ On Unix-based systems (including OS X) the dictionary will default to:
 let g:lexical#dictionary = ['/usr/share/dict/words',]
 ```
 
-Note that you can specify multiple dictionaries in the list.
-
-You can override this default during initialization. See thesaurus example
-above.
+* You can specify multiple paths to dictionaries in the list.
+* An explicit setting will override your globally-defined `dictionary`
+  setting, but only for the buffers initialized with `lexical#init()`.
 
 ## Commands
 
-Vim has many default key mappings for spell-checking and completion.
+Vim offers many standard key mappings for spell-checking and completion.
 
 ### Spell-check commands
 
