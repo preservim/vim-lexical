@@ -3,16 +3,17 @@
 > Building on Vim’s spell-check and thesaurus/dictionary completion
 
 Though principally used as a editor for code, Vim flirts with those of us
-editing documentation and prose by providing spell-check as well as completion
-capabilities using both dictionary and thesaurus files.
+editing documentation and prose by providing spell-check as well as
+completion capabilities using both dictionary and thesaurus files.
 
-While we can configure these settings in our `.vimrc` files, we often
-need more granular control, where defaults are leveraged and configuration is
+While we can configure these settings in our `.vimrc` files, we often need
+more granular control, where defaults are leveraged and configuration is
 applied by file type. This plugin fills that gap.
 
 ## Installation
 
-Install using Pathogen, Vundle, Neobundle, or your favorite Vim package manager.
+Best Installed using Pathogen, Vundle, Neobundle, or your favorite Vim
+package manager.
 
 ## Configuration
 
@@ -28,44 +29,55 @@ augroup lexical
 augroup END
 ```
 
-In the last `autocmd` statement above, dictionaries and thesauruses are loaded
-for the `text` file type, but spell-check disabled by default.
+In the last `autocmd` statement above, dictionaries and thesauruses are
+configured for the `text` file type, but spell-check is disabled by
+default.
 
 ### Spell-check configuration
 
 You can change the default setting for spell-check in your `.vimrc`:
 
 ```vim
-let g:lexical#spell = 1
+let g:lexical#spell = 1         " 0=disabled, 1=enabled
 ```
+
+This only affects buffers initialized with `lexical#init()`.
 
 ### Thesaurus configuration
 
-If you don’t have one already, download a thesaurus from Project Gutenberg
-[mthes10.zip](http://www.gutenberg.org/dirs/etext02/mthes10.zip). By default it
-will look for it at this path:
+If you don’t have one already, download a thesaurus from Project
+Gutenberg:
+[mthes10.zip](http://www.gutenberg.org/dirs/etext02/mthes10.zip). By
+default _lexical_ will look for it at the following path:
 
 ```vim
-let g:lexical#thesaurus = ['~/.vim/thesaurus/mthesaur.txt']
+let g:lexical#thesaurus = ['~/.vim/thesaurus/mthesaur.txt',]
 ```
 
 Note that you can specify multiple thesauruses in the list.
 
-Specifying a `'thesaurus'` list argument in `lexical#init()` will override this
-default.
+You can override the default during initialization:
+
+```vim
+augroup lexical
+  autocmd!
+  autocmd FileType textile call lexical#init({'thesaurus': ['~/thes/thes.de.txt',]})
+  ...
+augroup END
+```
 
 ### Dictionary configuration
 
 On Unix-based systems (including OS X) the dictionary will default to:
 
 ```vim
-let g:lexical#dictionary = ['/usr/share/dict/words']
+let g:lexical#dictionary = ['/usr/share/dict/words',]
 ```
 
 Note that you can specify multiple dictionaries in the list.
 
-Specifying a `'dictionary'` list argument in `lexical#init()` will override
-this default.
+You can override this default during initialization. See thesaurus example
+above.
 
 ## Commands
 
@@ -73,7 +85,7 @@ Vim has many default key mappings for spell-checking and completion.
 
 ### Spell-check commands
 
-These are the Normal mode commands:
+These are the _Normal_ mode commands:
 
 * `]s`			- Move to next misspelled word after the cursor.
 * `[s`			- Like `]s` but search backwards
@@ -96,20 +108,18 @@ characters (including whitespace). Otherwise the word under the cursor is used.
 * `:spellr` - Repeat the replacement done by `z=` for all matches with the
   replaced word in the current window
 
-And for Insert mode:
+For spelling suggestions while in _Insert_ mode:
 
-* `«CTRL-X» «CTRL-S»` - find suggestion, using `«CTRL-P»` and `«CTRL-N»` to
-  navigate.
+* `«CTRL-X» «CTRL-S»` - suggest spelling, using `«CTRL-P»` and `«CTRL-N»` to navigate.
 
 ### Thesaurus commands
 
-For thesaurus lookup, Vim has an Insert mode mapping of:
+For thesaurus lookup while in _Insert_ mode:
 
-* `«CTRL-X» «CTRL-T»` - for thesaurus completion, using `«CTRL-P»` and
-  `«CTRL-N»` to navigate.
+* `«CTRL-X» «CTRL-T»` - thesaurus lookup, using `«CTRL-P»` and `«CTRL-N»` to navigate.
 
-For convenient Normal mode thesaurus lookup from the cursor position, you can
-define a key:
+For convenient _Normal_ mode thesaurus lookup from the cursor position,
+you can define a key:
 
 ```vim
 let g:lexical#thesaurus_key = '<leader>t'
@@ -119,13 +129,12 @@ No key is defined or mapped by default.
 
 ### Dictionary commands
 
-For dictionary lookup, Vim has an Insert mode mapping of:
+For dictionary completion while in _Insert_ mode:
 
-* `«CTRL-X» «CTRL-K»` - for dictionary completion, using `«CTRL-P»` and
-  `«CTRL-N»` to navigate.
+* `«CTRL-X» «CTRL-K»` - dictionary completion, using `«CTRL-P»` and `«CTRL-N»` to navigate.
 
-For convenient Normal mode dictionary lookup from the cursor position, you can
-define a key:
+For convenient _Normal_ mode dictionary lookup from the cursor position,
+you can define a key:
 
 ```vim
 let g:lexical#dictionary_key = '<leader>k'
@@ -138,9 +147,9 @@ No key is defined or mapped by default.
 If you like this plugin, you might like these others from the same author:
 
 * [vim-quotable](http://github.com/reedes/vim-quotable) - extends Vim to support typographic (‘curly’) quotes
-* [vim-litecorrect](http://github.com/reedes/vim-litecorrect) - Lightweight auto-correction for Vim
-* [vim-thematic](http://github.com/reedes/vim-thematic) — Conveniently manage Vim’s appearance to suit your task and environment 
 * [vim-pencil](http://github.com/reedes/vim-pencil) - Rethinking Vim as a tool for writers
+* [vim-thematic](http://github.com/reedes/vim-thematic) — Conveniently manage Vim’s appearance to suit your task and environment 
+* [vim-litecorrect](http://github.com/reedes/vim-litecorrect) - Lightweight auto-correction for Vim
 * [vim-colors-pencil](http://github.com/reedes/vim-colors-pencil) — A color scheme for Vim inspired by IA Writer
 
 ## Future development
@@ -148,3 +157,4 @@ If you like this plugin, you might like these others from the same author:
 If you’ve spotted a problem or have an idea on improving this plugin,
 please post it to the github project issue page.
 
+<!-- vim: set tw=74 :-->
