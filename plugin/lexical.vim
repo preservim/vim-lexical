@@ -37,7 +37,9 @@ if !exists('g:lexical#thesaurus')
           \ ? thes_path
           \ : ''
           \ ]
+    unlet thes_path
   endif
+  unlet thes_list
 endif
 
 if !exists('g:lexical#dictionary')
@@ -54,7 +56,9 @@ if !exists('g:lexical#dictionary')
           \ ? dict_path
           \ : ''
           \ ]
+    unlet dict_path
   endif
+  unlet dict_list
 endif
 
 if !exists('g:lexical#thesaurus_key')
