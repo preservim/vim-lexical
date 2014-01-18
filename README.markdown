@@ -127,10 +127,10 @@ For a convenient pop-up list of suggestions from _Normal_ mode, you can map an
 available key of your choice in your `.vimrc`:
 
 ```vim
-nmap <leader>s <Plug>LexicalSpell
+let g:lexical#spell_key = '<leader>s'
 ```
 
-This mapping is strictly opt-in. No key is mapped by default.
+This buffer-scoped mapping is strictly opt-in. No key is mapped by default.
 
 ### Thesaurus commands
 
@@ -142,10 +142,10 @@ For convenient _Normal_ mode thesaurus lookup from the cursor position,
 you can map an available key of your choice in your `.vimrc`:
 
 ```vim
-nmap <leader>t <Plug>LexicalThesaurus
+let g:lexical#thesaurus_key = '<leader>t'
 ```
 
-This mapping is strictly opt-in. No key is mapped by default.
+This buffer-scoped mapping is strictly opt-in. No key is mapped by default.
 
 ### Dictionary commands
 
@@ -157,10 +157,10 @@ For convenient _Normal_ mode dictionary lookup from the cursor position,
 you can map an available key of your choice in your `.vimrc`:
 
 ```vim
-nmap <leader>k <Plug>LexicalDictionary
+let g:lexical#dictionary_key = '<leader>k'
 ```
 
-This mapping is strictly opt-in. No key is mapped by default.
+This buffer-scoped mapping is strictly opt-in. No key is mapped by default.
 
 ### Define your own commands
 
