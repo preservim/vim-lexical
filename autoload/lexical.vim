@@ -40,13 +40,13 @@ function! lexical#init(...) abort
   endif
 
   if len(g:lexical#spell_key) > 0
-    execute 'nnoremap <buffer> ' . g:lexical#spell_key . ' ea<C-X><C-S>'
+    execute 'nnoremap <buffer> ' . g:lexical#spell_key . ' vaWovEa<C-X><C-S>'
   endif
   if len(g:lexical#thesaurus_key) > 0
-    execute 'nnoremap <buffer> ' . g:lexical#thesaurus_key . ' ea<C-X><C-T>'
+    execute 'nnoremap <buffer> ' . g:lexical#thesaurus_key . ' vaWovEa<C-X><C-T>'
   endif
   if len(g:lexical#dictionary_key) > 0
-    execute 'nnoremap <buffer> ' . g:lexical#dictionary_key . ' ea<C-X><C-K>'
+    execute 'nnoremap <buffer> ' . g:lexical#dictionary_key . ' vaWovEa<C-X><C-K>'
   endif
 
 endfunction
