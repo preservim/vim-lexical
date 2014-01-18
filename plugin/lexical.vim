@@ -61,13 +61,9 @@ if !exists('g:lexical#dictionary')
   unlet dict_list
 endif
 
-if !exists('g:lexical#thesaurus_key')
-  let g:lexical#thesaurus_key = ''
-endif
-
-if !exists('g:lexical#dictionary_key')
-  let g:lexical#dictionary_key = ''
-endif
+nnoremap <silent> <Plug>LexicalSpell      ea<C-X><C-S>
+nnoremap <silent> <Plug>LexicalThesaurus  ea<C-X><C-T>
+nnoremap <silent> <Plug>LexicalDictionary ea<C-X><C-K>
 
 let &cpo = s:save_cpo
 unlet s:save_cpo

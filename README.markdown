@@ -123,6 +123,15 @@ For spelling suggestions while in _Insert_ mode:
 
 * `«CTRL-X» «CTRL-S»` - suggest spelling, using `«CTRL-P»` and `«CTRL-N»` to navigate.
 
+For a convenient pop-up list of suggestions from _Normal_ mode, you can map an 
+available key of your choice in your `.vimrc`:
+
+```vim
+nmap <leader>s <Plug>LexicalSpell
+```
+
+This mapping is strictly opt-in. No key is mapped by default.
+
 ### Thesaurus commands
 
 For thesaurus lookup while in _Insert_ mode:
@@ -130,13 +139,13 @@ For thesaurus lookup while in _Insert_ mode:
 * `«CTRL-X» «CTRL-T»` - thesaurus lookup, using `«CTRL-P»` and `«CTRL-N»` to navigate.
 
 For convenient _Normal_ mode thesaurus lookup from the cursor position,
-you can define a key in your `.vimrc`:
+you can map an available key of your choice in your `.vimrc`:
 
 ```vim
-let g:lexical#thesaurus_key = '<leader>t'
+nmap <leader>t <Plug>LexicalThesaurus
 ```
 
-This mapping is strictly opt-in. No key is defined or mapped by default.
+This mapping is strictly opt-in. No key is mapped by default.
 
 ### Dictionary commands
 
@@ -145,13 +154,13 @@ For dictionary completion while in _Insert_ mode:
 * `«CTRL-X» «CTRL-K»` - dictionary completion, using `«CTRL-P»` and `«CTRL-N»` to navigate.
 
 For convenient _Normal_ mode dictionary lookup from the cursor position,
-you can define a key in your `.vimrc`:
+you can map an available key of your choice in your `.vimrc`:
 
 ```vim
-let g:lexical#dictionary_key = '<leader>k'
+nmap <leader>k <Plug>LexicalDictionary
 ```
 
-This mapping is strictly opt-in. No key is defined or mapped by default.
+This mapping is strictly opt-in. No key is mapped by default.
 
 ### Define your own commands
 

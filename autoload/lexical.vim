@@ -39,14 +39,6 @@ function! lexical#init(...) abort
     setlocal complete-=k
   endif
 
-  if len(g:lexical#thesaurus_key) > 0
-    execute 'nnoremap <buffer> ' . g:lexical#thesaurus_key . ' a<C-X><C-S>'
-  endif
-
-  if len(g:lexical#dictionary_key) > 0
-    execute 'nnoremap <buffer> ' . g:lexical#dictionary_key . ' ea<C-X><C-T>'
-  endif
-
 endfunction
 
 " vim:ts=2:sw=2:sts=2
