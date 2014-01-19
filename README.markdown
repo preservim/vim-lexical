@@ -192,13 +192,22 @@ not, it will fall back to your specified defaults or global settings.
 
 ## See also
 
-If you like this plugin, you might like these others from the same author:
+If you find this plugin useful, you may want to check out these others by
+the same author:
 
-* [vim-quotable](http://github.com/reedes/vim-quotable) - extends Vim to support typographic (‘curly’) quotes
-* [vim-pencil](http://github.com/reedes/vim-pencil) - Rethinking Vim as a tool for writers
-* [vim-thematic](http://github.com/reedes/vim-thematic) — Conveniently manage Vim’s appearance to suit your task and environment 
-* [vim-litecorrect](http://github.com/reedes/vim-litecorrect) - Lightweight auto-correction for Vim
-* [vim-colors-pencil](http://github.com/reedes/vim-colors-pencil) — A color scheme for Vim inspired by IA Writer
+* [vim-colors-pencil][cp] — Color scheme for Vim inspired by IA Writer
+* [vim-litecorrect][lc] - Lightweight auto-correction for Vim
+* [vim-pencil][pn] - Rethinking Vim as a tool for writers
+* [vim-quotable][qu] - Extends Vim to support typographic (‘curly’) quotes
+* [vim-thematic][th] —  appearance to suit your task and environment 
+* [vim-wordy][wo] - Uncovering potential usage problems in writing 
+
+[cp]: http://github.com/reedes/vim-colors-pencil
+[lc]: http://github.com/reedes/vim-litecorrect
+[pn]: http://github.com/reedes/vim-pencil
+[qu]: http://github.com/reedes/vim-quotable
+[th]: http://github.com/reedes/vim-thematic
+[wo]: http://github.com/reedes/vim-wordy
 
 ## Future development
 
