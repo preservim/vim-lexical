@@ -195,12 +195,12 @@ not, it will fall back to your specified defaults or global settings.
 If you find this plugin useful, you may want to check out these others by
 the same author:
 
-* [vim-colors-pencil][cp] — Color scheme for Vim inspired by IA Writer
-* [vim-litecorrect][lc] - Lightweight auto-correction for Vim
-* [vim-pencil][pn] - Rethinking Vim as a tool for writers
-* [vim-quotable][qu] - Extends Vim to support typographic (‘curly’) quotes
+* [vim-colors-pencil][cp] — color scheme for vim inspired by ia writer
+* [vim-litecorrect][lc] - lightweight auto-correction for vim
+* [vim-pencil][pn] - rethinking vim as a tool for writers
+* [vim-quotable][qu] - extends vim to support typographic (‘curly’) quotes
 * [vim-thematic][th] —  appearance to suit your task and environment 
-* [vim-wordy][wo] - Uncovering potential usage problems in writing 
+* [vim-wordy][wo] - uncovering potential usage problems in writing 
 
 [cp]: http://github.com/reedes/vim-colors-pencil
 [lc]: http://github.com/reedes/vim-litecorrect
