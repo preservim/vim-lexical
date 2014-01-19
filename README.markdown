@@ -7,8 +7,7 @@ Features of this plugin:
 * Specify the languages to be used in spell-check
 * Specify a list of thesauruses for synonym completion
 * Specify a list of dictionaries for word completion
-* Opt-in key mappings for _Normal_ mode thesaurus and dictionary
-  completion
+* Opt-in key mappings for _Normal_ mode thesaurus and dictionary completion
 * Buffer-scoped configuration (leaves your global settings alone)
 
 Though principally used as a editor for code, Vim flirts with those of us
@@ -30,6 +29,11 @@ Because spell-check, thesaurus, etc. isn’t needed for all file types, you can
 configure it per file type in your `.vimrc`:
 
 ```vim
+" standard vim command to enable loading the plugin files 
+" (and their indent support) for specific file types.
+" It may already be in your .vimrc!
+filetype plugin indent on
+
 augroup lexical
   autocmd!
   autocmd FileType markdown call lexical#init()
@@ -195,12 +199,12 @@ not, it will fall back to your specified defaults or global settings.
 If you find this plugin useful, you may want to check out these others by
 the same author:
 
-* [vim-colors-pencil][cp] — color scheme for vim inspired by ia writer
+* [vim-colors-pencil][cp] — color scheme for Vim inspired by IA Writer
 * [vim-litecorrect][lc] - lightweight auto-correction for vim
-* [vim-pencil][pn] - rethinking vim as a tool for writers
-* [vim-quotable][qu] - extends vim to support typographic (‘curly’) quotes
-* [vim-thematic][th] —  appearance to suit your task and environment 
-* [vim-wordy][wo] - uncovering potential usage problems in writing 
+* [vim-pencil][pn] - rethinking Vim as a tool for writers
+* [vim-quotable][qu] - extends Vim to support typographic (‘curly’) quotes
+* [vim-thematic][th] — modify Vim’s appearance to suit your task and environment 
+* [vim-wordy][wo] - uncovering usage problems in writing 
 
 [cp]: http://github.com/reedes/vim-colors-pencil
 [lc]: http://github.com/reedes/vim-litecorrect
