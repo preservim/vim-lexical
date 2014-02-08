@@ -202,7 +202,7 @@ If you find this plugin useful, you may want to check out these others by
 * [vim-colors-pencil][cp] - color scheme for Vim inspired by IA Writer
 * [vim-litecorrect][lc] - lightweight auto-correction for vim
 * [vim-pencil][pn] - rethinking Vim as a tool for writers
-* [vim-quotable][qu] - extends Vim to support typographic (‘curly’) quotes
+* [vim-textobj-quote][qu] - extends Vim to support typographic (‘curly’) quotes
 * [vim-textobj-sentence][ts] - improving on Vim's native sentence motion command
 * [vim-thematic][th] - modify Vim’s appearance to suit your task and environment 
 * [vim-wheel][wh] - screen-anchored cursor movement for Vim
@@ -212,7 +212,7 @@ If you find this plugin useful, you may want to check out these others by
 [cp]: http://github.com/reedes/vim-colors-pencil
 [lc]: http://github.com/reedes/vim-litecorrect
 [pn]: http://github.com/reedes/vim-pencil
-[qu]: http://github.com/reedes/vim-quotable
+[qu]: http://github.com/reedes/vim-textobj-quote
 [ts]: http://github.com/reedes/vim-textobj-sentence
 [th]: http://github.com/reedes/vim-thematic
 [wh]: http://github.com/reedes/vim-wheel
