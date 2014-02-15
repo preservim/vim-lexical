@@ -70,17 +70,26 @@ your `.vimrc`:
 let g:lexical#spelllang = ['en_us','en_ca',]
 ```
 
+Available spell files can be found at [ftp.vim.org][sf]. Vim will attempt
+to download those which are not installed locally. For more detail see
+
+```vim
+:help spellfile.vim
+```
+
+[sf]: http://ftp.vim.org/vim/runtime/spell
+
 ### Thesaurus configuration
 
-If you don’t have one already, download a thesaurus, such as [Moby
-Thesaurus][1] from Project Gutenberg and extract the `mthesaur.txt` file.
-By default _lexical_ will look for it at the following path:
+If you don’t have one already, download a thesaurus, such as Grady Ward’s
+[Moby Thesaurus][1] on Project Gutenberg and extract the `mthesaur.txt`
+file. By default _lexical_ will look for it at the following path:
 
 ```vim
 let g:lexical#thesaurus = ['~/.vim/thesaurus/mthesaur.txt',]
 ```
 
-* You can specify multiple paths to thesauruses in the list.
+You can specify multiple paths to thesauruses in the list.
 
 [1]: http://www.gutenberg.org/ebooks/3202 "Moby Thesaurus List by Grady Ward"
 
@@ -92,13 +101,13 @@ On Unix-based systems (including OS X) the dictionary will default to:
 let g:lexical#dictionary = ['/usr/share/dict/words',]
 ```
 
-* You can specify multiple paths to dictionaries in the list.
+You can specify multiple paths to dictionaries in the list.
 
 ## Commands
 
 Vim offers many standard key mappings for spell-checking and completion.
 
-### Spell-check commands
+### Spell-check
 
 These are the _Normal_ mode commands:
 
@@ -136,7 +145,7 @@ let g:lexical#spell_key = '<leader>s'
 
 This buffer-scoped mapping is strictly opt-in. No key is mapped by default.
 
-### Thesaurus commands
+### Thesaurus lookup
 
 For thesaurus lookup while in _Insert_ mode:
 
@@ -151,7 +160,7 @@ let g:lexical#thesaurus_key = '<leader>t'
 
 This buffer-scoped mapping is strictly opt-in. No key is mapped by default.
 
-### Dictionary commands
+### Dictionary completion
 
 For dictionary completion while in _Insert_ mode:
 
@@ -196,6 +205,9 @@ not, it will fall back to your specified defaults or global settings.
 
 ## See also
 
+The [ervandew/supertab][st] plugin will make these _Insert_ mode
+completions available via the `«tab»` key.
+
 If you find this plugin useful, you may want to check out these others by
 [@reedes][re]:
 
@@ -208,6 +220,7 @@ If you find this plugin useful, you may want to check out these others by
 * [vim-wheel][wh] - screen-anchored cursor movement for Vim
 * [vim-wordy][wo] - uncovering usage problems in writing 
 
+[st]: https://github.com/ervandew/supertab
 [re]: http://github.com/reedes
 [cp]: http://github.com/reedes/vim-colors-pencil
 [lc]: http://github.com/reedes/vim-litecorrect
