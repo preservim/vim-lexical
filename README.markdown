@@ -29,14 +29,12 @@ Because spell-check, thesaurus, etc. isn’t needed for all file types, you can
 configure it per file type in your `.vimrc`:
 
 ```vim
-" standard vim command to enable loading the plugin files 
-" (and their indent support) for specific file types.
-" It may already be in your .vimrc!
-filetype plugin indent on
+set nocompatible
+filetype plugin on       " may already be in your .vimrc
 
 augroup lexical
   autocmd!
-  autocmd FileType markdown call lexical#init()
+  autocmd FileType markdown,mkd call lexical#init()
   autocmd FileType textile call lexical#init()
   autocmd FileType text call lexical#init({ 'spell': 0 })
 augroup END
