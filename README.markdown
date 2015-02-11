@@ -7,6 +7,7 @@ Features of this plugin:
 * Specify the languages to be used in spell-check
 * Specify a list of thesauruses for synonym completion
 * Specify a list of dictionaries for word completion
+* Specify a list of spellfiles for custom word-check additions
 * Opt-in key mappings for _Normal_ mode thesaurus and dictionary completion
 * Buffer-scoped configuration (leaves your global settings alone)
 
@@ -101,6 +102,17 @@ let g:lexical#dictionary = ['/usr/share/dict/words',]
 
 You can specify multiple paths to dictionaries in the list.
 
+
+### Spellfile configuration
+On Unix-based systems (including OS X) the spellfile will default to:
+
+```vim
+let g:lexical#dictionary = ['~/.vim/spell/en.utf-8.add',]
+```
+
+You can specify a single path for spellfile in the list.
+
+
 ## Commands
 
 Vim offers many standard key mappings for spell-checking and completion.
@@ -189,6 +201,7 @@ command -nargs=0 LexMed call lexical#init({
                     \ 'thesaurus':  ['~/.vim/dictionary/medical_synonyms.txt',
                     \                '~/.vim/thesaurus/mthesaur.txt',
                     \               ],
+                    \ 'spellfile':  ['~/.vim/spell/en.add'],
                     \ })
 ```
 
