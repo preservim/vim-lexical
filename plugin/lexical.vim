@@ -61,6 +61,25 @@ if !exists('g:lexical#dictionary')
   unlet dict_list
 endif
 
+if !exists('g:lexical#spellfile')
+  " build on globally-defined spellfile, if any
+  let spellfile_list = split(&spellfile, ',')
+  if len(spellfile_list) > 0
+    " use the globally-defined spellfile
+    let g:lexical#spellfile = spellfile_list
+  else
+    " attempt to discover a dictionary
+    let spellfile_path = '~/.vim/spell/en.utf-8.add'
+    let g:lexical#spellfile = [
+          \ has('unix') && filereadable(spellfile_path)
+          \ ? spellfile_path
+          \ : ''
+          \ ]
+    unlet spellfile_path
+  endif
+  unlet spellfile_list
+endif
+
 if !exists('g:lexical#spell_key')
   let g:lexical#spell_key = ''
 endif
@@ -69,6 +88,9 @@ if !exists('g:lexical#thesaurus_key')
 endif
 if !exists('g:lexical#dictionary_key')
   let g:lexical#dictionary_key = ''
+endif
+if !exists('g:lexical#spellfile_key')
+  let g:lexical#spellfile_key = ''
 endif
 
 let &cpo = s:save_cpo

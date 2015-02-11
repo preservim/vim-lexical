@@ -23,6 +23,9 @@ function! lexical#init(...) abort
   let l:spelllang_list = get(l:args, 'spelllang', g:lexical#spelllang)
   execute 'setlocal spelllang=' . join(l:spelllang_list, ',')
 
+  let l:spellfile_list = get(l:args, 'spellfile', g:lexical#spellfile)
+  execute 'setlocal spellfile=' . join(l:spellfile_list, ',')
+
   let l:thesaurus_list = get(l:args, 'thesaurus', g:lexical#thesaurus)
   execute 'setlocal thesaurus=' . join(l:thesaurus_list, ',')
   if len(&thesaurus) > 0
