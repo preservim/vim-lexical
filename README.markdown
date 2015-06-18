@@ -144,7 +144,7 @@ characters (including whitespace). Otherwise the word under the cursor is used.
 
 For spelling suggestions while in _Insert_ mode:
 
-* `«CTRL-X» «CTRL-S»` - suggest spelling, using `«CTRL-P»` and `«CTRL-N»` to navigate.
+* `«CTRL-X» «CTRL-S»` (or `«CTRL-X» «s»` for terminal users) - suggest spelling, using `«CTRL-P»` and `«CTRL-N»` to navigate.
 
 For a convenient pop-up list of suggestions from _Normal_ mode, you can map an 
 available key of your choice in your `.vimrc`:
