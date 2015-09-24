@@ -107,7 +107,7 @@ You can specify multiple paths to dictionaries in the list.
 On Unix-based systems (including OS X) the spellfile will default to:
 
 ```vim
-let g:lexical#dictionary = ['~/.vim/spell/en.utf-8.add',]
+let g:lexical#spellfile = ['~/.vim/spell/en.utf-8.add',]
 ```
 
 You can specify a single path for spellfile in the list.

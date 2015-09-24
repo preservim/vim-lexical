@@ -68,7 +68,7 @@ if !exists('g:lexical#spellfile')
     " use the globally-defined spellfile
     let g:lexical#spellfile = spellfile_list
   else
-    " attempt to discover a dictionary
+    " attempt to discover a spellfile
     let spellfile_path = '~/.vim/spell/en.utf-8.add'
     let g:lexical#spellfile = [
           \ has('unix') && filereadable(spellfile_path)
