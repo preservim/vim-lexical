@@ -12,12 +12,14 @@ let autoloaded_lexical = 1
 function! lexical#init(...) abort
   let l:args = a:0 ? a:1 : {}
 
-  if get(l:args, 'spell', g:lexical#spell)
-    setlocal spell
-    setlocal complete+=kspell
-  else
-    setlocal nospell
-    setlocal complete-=kspell
+  if &buftype ==# ''
+    if get(l:args, 'spell', g:lexical#spell)
+      setlocal spell
+      setlocal complete+=kspell
+    else
+      setlocal nospell
+      setlocal complete-=kspell
+    endif
   endif
 
   let l:spelllang_list = get(l:args, 'spelllang', g:lexical#spelllang)
