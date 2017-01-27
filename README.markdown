@@ -81,8 +81,9 @@ to download those which are not installed locally. For more detail see
 ### Thesaurus configuration
 
 If you don’t have one already, download a thesaurus, such as Grady Ward’s
-[Moby Thesaurus][1] on Project Gutenberg and extract the `mthesaur.txt`
-file. By default _lexical_ will look for it at the following path:
+Moby Thesaurus at Zeke's [moby thesaurus][1], or on [Project Gutenberg][2] 
+and extract the `mthesaur.txt` file. By default _lexical_ will look for it 
+at the following path:
 
 ```vim
 let g:lexical#thesaurus = ['~/.vim/thesaurus/mthesaur.txt',]
@@ -90,7 +91,8 @@ let g:lexical#thesaurus = ['~/.vim/thesaurus/mthesaur.txt',]
 
 You can specify multiple paths to thesauruses in the list.
 
-[1]: http://www.gutenberg.org/ebooks/3202 "Moby Thesaurus List by Grady Ward"
+[1]: https://raw.githubusercontent.com/zeke/moby/master/words.txt "On moby-thesaurus site"
+[2]: http://www.gutenberg.org/ebooks/3202 "Moby Thesaurus List by Grady Ward"
 
 ### Dictionary configuration
 
