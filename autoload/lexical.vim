@@ -1,7 +1,7 @@
 " ============================================================================
 " File:        autoload/lexical.vim
 " Description: autoload script for vim-lexical plugin
-" Maintainer:  Reed Esau <github.com/reedes>
+" Maintainer:  preservim <https://github.com/preservim>
 " Last Change: January 1, 2014
 " License:     The MIT License (MIT)
 " ============================================================================

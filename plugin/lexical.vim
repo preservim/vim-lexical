@@ -1,7 +1,7 @@
 " =============================================================================
 " File:        plugin/lexical.vim
 " Description: Spell/Dictionary/Thesaurus support for the Vim text editor
-" Maintainer:  Reed Esau <github.com/reedes>
+" Maintainer:  preservim <https://github.com/preservim>
 " Last Change: January 1, 2014
 " License:     The MIT License (MIT)
 " =============================================================================
