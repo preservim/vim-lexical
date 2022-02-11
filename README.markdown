@@ -21,8 +21,15 @@ applied by file type to the current buffer. This plugin fills that gap.
 
 ## Installation
 
-Best Installed using Pathogen, Vundle, Neobundle, or your favorite Vim
-package manager.
+You can install using your favorite Vim package manager. (E.g.,
+[Pathogen][pathogen], [Vundle][vundle], or [Plug][plug].) If you are using
+a recent version of vim or neovim, you can also use native package
+support. (See [:help packages][packages].)
+
+[pathogen]: https://github.com/tpope/vim-pathogen
+[vundle]: https://github.com/VundleVim/Vundle.vim
+[plug]: https://github.com/junegunn/vim-plug
+[packages]: https://vimhelp.org/repeat.txt.html#packages
 
 ## Configuration
 
@@ -92,7 +99,7 @@ let g:lexical#thesaurus = ['~/.vim/thesaurus/mthesaur.txt',]
 You can specify multiple paths to thesauruses in the list.
 
 [1]: https://raw.githubusercontent.com/zeke/moby/master/words.txt "On moby-thesaurus site"
-[2]: http://www.gutenberg.org/ebooks/3202 "Moby Thesaurus List by Grady Ward"
+[2]: https://www.gutenberg.org/ebooks/3202 "Moby Thesaurus List by Grady Ward"
 
 ### Dictionary configuration
 
@@ -221,12 +228,11 @@ not, it will fall back to your specified defaults or global settings.
 The [ervandew/supertab][st] plugin will make these _Insert_ mode
 completions available via the `«tab»` key.
 
-If you find this plugin useful, you may want to check out these others by
-[@reedes][re]:
+If you find this plugin useful, you may want to check out these others
+originally by [@reedes][re]:
 
 * [vim-colors-pencil][cp] - color scheme for Vim inspired by IA Writer
 * [vim-litecorrect][lc] - lightweight auto-correction for vim
-* [vim-one][vo] - make use of Vim’s _+clientserver_ capabilities 
 * [vim-pencil][pn] - rethinking Vim as a tool for writers
 * [vim-textobj-quote][qu] - extends Vim to support typographic (‘curly’) quotes
 * [vim-textobj-sentence][ts] - improving on Vim's native sentence motion command
@@ -236,21 +242,22 @@ If you find this plugin useful, you may want to check out these others by
 * [vim-wordchipper][wc] - power tool for shredding text in Insert mode
 
 [st]: https://github.com/ervandew/supertab
-[re]: http://github.com/reedes
-[cp]: http://github.com/reedes/vim-colors-pencil
-[lc]: http://github.com/reedes/vim-litecorrect
-[vo]: http://github.com/reedes/vim-one
-[pn]: http://github.com/reedes/vim-pencil
-[qu]: http://github.com/reedes/vim-textobj-quote
-[ts]: http://github.com/reedes/vim-textobj-sentence
-[th]: http://github.com/reedes/vim-thematic
-[wh]: http://github.com/reedes/vim-wheel
-[wo]: http://github.com/reedes/vim-wordy
-[wc]: http://github.com/reedes/vim-wordchipper
+[re]: https://github.com/reedes
+[cp]: https://github.com/preservim/vim-colors-pencil
+[lc]: https://github.com/preservim/vim-litecorrect
+[pn]: https://github.com/preservim/vim-pencil
+[qu]: https://github.com/preservim/vim-textobj-quote
+[ts]: https://github.com/preservim/vim-textobj-sentence
+[th]: https://github.com/preservim/vim-thematic
+[wh]: https://github.com/preservim/vim-wheel
+[wo]: https://github.com/preservim/vim-wordy
+[wc]: https://github.com/preservim/vim-wordchipper
 
 ## Future development
 
 If you’ve spotted a problem or have an idea on improving this plugin,
-please post it to the github project issue page.
+please post it to the [GitHub project issue page][issues].
+
+[issues]: https://github.com/preservim/vim-lexical/issues
 
 <!-- vim: set tw=74 :-->
